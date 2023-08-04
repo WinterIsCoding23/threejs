@@ -14,6 +14,11 @@ const camera = new THREE.PerspectiveCamera(
 const hlight = new THREE.AmbientLight(0x404040, 100);
 scene.add(hlight);
 
+const directionalLight = new THREE.DirectionalLight(0xffffff, 100);
+directionalLight.position.set(0, 1, 0);
+directionalLight.castShadow = true;
+scene.add(directionalLight);
+
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
