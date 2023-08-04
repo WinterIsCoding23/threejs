@@ -41,9 +41,9 @@ camera.position.z = 10;
 
 function animate() {
   if (loadedModel) {
-    loadedModel.scene.rotation.x += 0.01;
-    loadedModel.scene.rotation.y += 0.01;
-    loadedModel.scene.rotation.z += 0.01;
+    loadedModel.scene.rotation.x += 0.005;
+    loadedModel.scene.rotation.y += 0.005;
+    loadedModel.scene.rotation.z += 0.005;
   }
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
