@@ -1,6 +1,8 @@
 import * as THREE from "three";
 import WebGL from "three/addons/capabilities/WebGL.js";
 
+export default Cube (){
+ 
 if (WebGL.isWebGLAvailable()) {
   // Initiate function or other initializations here
   const scene = new THREE.Scene();
@@ -39,5 +41,12 @@ if (WebGL.isWebGLAvailable()) {
 } else {
   const warning = WebGL.getWebGLErrorMessage();
   document.getElementById("container").appendChild(warning);
+}
+
+return (
+  <div>
+    <canvas id="myThreeJsCanvas" />
+  </div>
+);
 }
 
