@@ -26,7 +26,8 @@ loader.load(
   function (gltf) {
     loadedModel = gltf;
 
-    gltf.scene.rotation.y = Math.PI / 8;
+    // gltf.scene.rotation.y = Math.PI / 8;
+    // gltf.scene.rotation.x = Math.PI / 8;
     gltf.scene.position.y = -4;
     gltf.scene.scale.set(5, 5, 5);
     scene.add(gltf.scene);
@@ -40,11 +41,11 @@ loader.load(
 camera.position.z = 10;
 
 function animate() {
-  if (loadedModel) {
-    loadedModel.scene.rotation.x += 0.005;
-    loadedModel.scene.rotation.y += 0.005;
-    loadedModel.scene.rotation.z += 0.005;
-  }
+  // if (loadedModel) {
+  //   loadedModel.scene.rotation.x += 0.005;
+  //   loadedModel.scene.rotation.y += 0.005;
+  //   loadedModel.scene.rotation.z += 0.005;
+  // }
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
 }
