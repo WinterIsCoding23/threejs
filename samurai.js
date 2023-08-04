@@ -26,7 +26,7 @@ loader.load(
   function (gltf) {
     gltf.scene.rotation.y = Math.PI / 8;
     gltf.scene.position.y = 0.5;
-    gltf.scene.scale.set(1, 1, 1);
+    gltf.scene.scale.set(5, 5, 5);
     scene.add(gltf.scene);
   },
   undefined,
