@@ -35,7 +35,7 @@ loader.load(
   }
 );
 
-camera.position.z = 5;
+camera.position.z = 10;
 
 function animate() {
   requestAnimationFrame(animate);
