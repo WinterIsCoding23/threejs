@@ -25,7 +25,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 const controls = new OrbitControls(camera, renderer.domElement);
-controls.addEventListener("change", renderer);
+controls.addEventListener("change", render);
 
 let loadedModel;
 const loader = new GLTFLoader();
@@ -49,6 +49,10 @@ loader.load(
 
 camera.position.z = 10;
 
+function render() {
+  renderer.render(scene, camera);
+}
+
 function animate() {
   // if (loadedModel) {
   //   loadedModel.scene.rotation.x += 0.005;
@@ -56,7 +60,7 @@ function animate() {
   //   loadedModel.scene.rotation.z += 0.005;
   // }
   requestAnimationFrame(animate);
-  renderer.render(scene, camera);
+  render();
 }
 
 animate();
