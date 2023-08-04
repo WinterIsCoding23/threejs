@@ -1,5 +1,5 @@
 import Cube from "./components/cube";
-import React, { useEffect } from "react";
+import React from "react";
 
 export default function App() {
   return (
