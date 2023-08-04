@@ -20,6 +20,7 @@ const Line = () => {
     camera.lookAt(0, 0, 0);
 
     const scene = new THREE.Scene();
+    scene.background = new THREE.Color("#b50000");
 
     //create a blue LineBasicMaterial
     const material = new THREE.LineBasicMaterial({ color: 0x0000ff });

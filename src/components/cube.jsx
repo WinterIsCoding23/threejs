@@ -60,6 +60,7 @@ const Cube = () => {
   useEffect(() => {
     if (WebGL.isWebGLAvailable()) {
       const scene = new THREE.Scene();
+      scene.background = new THREE.Color(0xdddddd);
       const camera = new THREE.PerspectiveCamera(
         75,
         window.innerWidth / window.innerHeight,
