@@ -20,6 +20,9 @@ const loader = new GLTFLoader();
 loader.load(
   "/scene.gltf",
   function (gltf) {
+    gltf.scene.rotation.y = Math.PI / 8;
+    gltf.scene.position.y = 3;
+    gltf.scene.scale.set(100, 100, 100);
     scene.add(gltf.scene);
   },
   undefined,
