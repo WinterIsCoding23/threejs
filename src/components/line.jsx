@@ -1,6 +1,5 @@
 import * as THREE from "three";
 import React, { useEffect, useRef } from "react";
-import WebGL from "three/addons/capabilities/WebGL.js";
 
 const Line = () => {
   const lineRef = useRef();
