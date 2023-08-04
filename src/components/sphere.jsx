@@ -24,8 +24,22 @@ const Sphere = () => {
       sphereRef.current.appendChild(renderer.domElement);
 
       const geometry = new THREE.SphereGeometry(15, 32, 16);
-      const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
-      const sphere = new THREE.Mesh(geometry, material);
+
+      //initialization
+      const loader = new THREE.TextureLoader();
+      //loading texture
+      const texture = loader.load("/sphere/Substance_Graph_BaseColor.jpg");
+      //initializing material
+      const material = new THREE.MeshPhongMaterial();
+      //setting material property
+      material.map = texture;
+
+      // ORIGINAL CODE:
+      // const material = new THREE.MeshBasicMaterial({
+      //   color: 0x110f97,
+      //   opacity: 0.5,
+      // });
+      const sphere = new THREE.Mesh(geometry, material.map);
 
       scene.add(sphere);
 
