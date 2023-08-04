@@ -50,11 +50,13 @@
 // );
 // }
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import WebGL from "three/addons/capabilities/WebGL.js";
 
 const Cube = () => {
+  const cubeRef = useRef();
+
   useEffect(() => {
     if (WebGL.isWebGLAvailable()) {
       const scene = new THREE.Scene();
@@ -67,9 +69,10 @@ const Cube = () => {
 
       const renderer = new THREE.WebGLRenderer();
       renderer.setSize(window.innerWidth, window.innerHeight);
-      document
-        .getElementById("myThreeJsCanvas")
-        .appendChild(renderer.domElement);
+      // document
+      //   .getElementById("myThreeJsCanvas")
+      //   .appendChild(renderer.domElement);
+      cubeRef.current.appendChild(renderer.domElement);
 
       const geometry = new THREE.BoxGeometry(1, 1, 1);
       const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
@@ -91,11 +94,7 @@ const Cube = () => {
     }
   }, []);
 
-  return (
-    <div>
-      <div id="myThreeJsCanvas" />
-    </div>
-  );
+  return <div ref={cubeRef} />;
 };
 
 export default Cube;
