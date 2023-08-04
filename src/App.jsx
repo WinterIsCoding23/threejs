@@ -1,10 +1,11 @@
-import cube
+import Cube from "./components/cube";
+import React, { useEffect } from "react";
 
-export default App(){
-    return (
-        <div>
-        <Cube />
-        <Samurai />
-        </div>
-    )
+export default function App() {
+  return (
+    <div>
+      <Cube />
+      {/* <Samurai /> */}
+    </div>
+  );
 }
