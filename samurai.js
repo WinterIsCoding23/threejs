@@ -1,5 +1,4 @@
 import * as THREE from "three";
-import WebGL from "three/addons/capabilities/WebGL.js";
 
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 
@@ -19,11 +18,14 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
+let loadedModel;
 const loader = new GLTFLoader();
 
 loader.load(
   "/samurai/scene.gltf",
   function (gltf) {
+    loadedModel = gltf;
+
     gltf.scene.rotation.y = Math.PI / 8;
     gltf.scene.position.y = -4;
     gltf.scene.scale.set(5, 5, 5);
@@ -38,6 +40,11 @@ loader.load(
 camera.position.z = 10;
 
 function animate() {
+  if (loadedModel) {
+    loadedModel.scene.rotation.x += 0.01;
+    loadedModel.scene.rotation.y += 0.01;
+    loadedModel.scene.rotation.z += 0.01;
+  }
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
 }
